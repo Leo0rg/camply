@@ -1,0 +1,23 @@
+{
+  "name": "online-shop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "preclient": "grep '^REACT_APP_' .env > client/.env || true",
+    "client": "cd client && yarn start",
+    "server": "cd server && yarn dev",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "start": "concurrently \"cd server && yarn start\" \"cd client && yarn start\"",
+    "build": "cd client && yarn build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "dependencies": {
+    "react-redux": "^9.2.0",
+    "redux": "^5.0.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^3.1.0"
+  }
+}
